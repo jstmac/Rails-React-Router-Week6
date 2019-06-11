@@ -11,7 +11,6 @@ class Api::ProductsController < ApplicationController
 
   def create
     product = Product.new(product_params)
-
     if product.save
       render json: product
     else
@@ -37,6 +36,6 @@ class Api::ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :price, :department)
+      params.require(:product).permit(:name, :price, :description, :department)
     end
 end
